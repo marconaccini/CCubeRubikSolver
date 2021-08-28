@@ -9,13 +9,13 @@
 *H*/
 
 // Inclusioni     *******************************************************
-#include "cube.h"
 #include <stdio.h>
 #include <string.h>
+#include "cube.h"
 
 // Definizioni    *******************************************************
 
-// dati *****************************************************************
+// Dati *****************************************************************
 
 //planarCube pC;
 //cube C;
@@ -24,6 +24,8 @@
 int swap(color * x_ptr, color * y_ptr);
 
 // Implementazione funzioni *********************************************
+
+// Implementazione funzioni per pieces
 int piece_set(piece * p_ptr, axis a, color c)
 {
     p_ptr->color[(int) a] = c;
@@ -74,17 +76,6 @@ int swap(color * x_ptr, color * y_ptr)
     return 0;
 }
 
-char * color_print(color c)
-{
-    static char col_str[7][10] = {"--", "White", "Yellow", "Blue", "Green","Orange", "Red"};
-    return col_str[(int) c];
-}
-
-char * color_print_short(color c)
-{
-    static char col_str[7][2] = {"--", "Wh", "Ye", "Bl", "Gr", "Or", "Rd"};
-    return col_str[(int) c];
-}
 
 int piece_print(piece p)
 {

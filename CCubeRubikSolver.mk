@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/NaccLib.c$(ObjectSuffix) $(IntermediateDirectory)/cube.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/colors.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/cube.c$(ObjectSuffix) 
 
 
 
@@ -91,6 +91,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/colors.c$(ObjectSuffix): colors.c $(IntermediateDirectory)/colors.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/colors.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/colors.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/colors.c$(DependSuffix): colors.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/colors.c$(ObjectSuffix) -MF$(IntermediateDirectory)/colors.c$(DependSuffix) -MM colors.c
+
+$(IntermediateDirectory)/colors.c$(PreprocessSuffix): colors.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/colors.c$(PreprocessSuffix) colors.c
+
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(DependSuffix): main.c
@@ -98,14 +106,6 @@ $(IntermediateDirectory)/main.c$(DependSuffix): main.c
 
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
-
-$(IntermediateDirectory)/NaccLib.c$(ObjectSuffix): NaccLib.c $(IntermediateDirectory)/NaccLib.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/NaccLib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NaccLib.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/NaccLib.c$(DependSuffix): NaccLib.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/NaccLib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/NaccLib.c$(DependSuffix) -MM NaccLib.c
-
-$(IntermediateDirectory)/NaccLib.c$(PreprocessSuffix): NaccLib.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/NaccLib.c$(PreprocessSuffix) NaccLib.c
 
 $(IntermediateDirectory)/cube.c$(ObjectSuffix): cube.c $(IntermediateDirectory)/cube.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/cube.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cube.c$(ObjectSuffix) $(IncludePath)

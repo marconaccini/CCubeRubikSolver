@@ -3,11 +3,11 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="colors.c"/>
+    <File Name="colors.h"/>
     <File Name="temp" ExcludeProjConfig="Debug;"/>
     <File Name="cube.c"/>
-    <File Name="NaccLib.c"/>
     <File Name="NaccModel.txt" ExcludeProjConfig="Debug;"/>
-    <File Name="NaccLib.h"/>
     <File Name="cube.h"/>
     <File Name="main.c" ExcludeProjConfig=""/>
   </VirtualDirectory>

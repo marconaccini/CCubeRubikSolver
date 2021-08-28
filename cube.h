@@ -7,7 +7,12 @@
 *
 * AUTHOR :    Naccini Marco        START DATE :    28/08/21 
 *H*/
+// Includes
 
+#ifndef cube_h
+#define cube_h
+#endif
+#include "colors.h"
 
 // Definizioni    *******************************************************
 #define X_Fw  1 // Forward  means X = +1
@@ -18,20 +23,6 @@
 #define X_Dw -1 // Backward means Z = -1
 
 // Strutture dati *******************************************************
-
-/* color: colors of cube*/
-typedef enum 
-{
-     Nc, // no color
-     Wh, // White
-     Ye, // Yellow
-     Bl, // Blue
-     Gr, // Green
-     Or, // Orange
-     Rd  // Red
-} color;
-char * color_print(color c);
-char * color_print_short(color c);
 
 /* indicates an axis */
 typedef enum 
@@ -52,13 +43,17 @@ typedef struct piece
 {
     color color[3];
 } piece;
-// piece functions
+
+// Prototipo funzioni ***************************************************
+
 int piece_set_axis(piece * p, axis a, color c); // set the color of the prefixed axes
 color get_piece(piece p, axis a);
 int piece_define(piece *  p, color cx, color cy, color cz);
 int piece_copy(piece * d_ptr, piece * s_ptr);
 int piece_rotate(piece * p, axis a);
 int piece_print(piece p);
+
+
 
 
      
