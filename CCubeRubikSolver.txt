@@ -1,1 +1,1 @@
-./Debug/colors.c.o ./Debug/main.c.o ./Debug/cube.c.o
+./Debug/main.c.o ./Debug/cube.c.o ./Debug/colors.c.o ./Debug/piece.c.o

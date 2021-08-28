@@ -1,6 +1,7 @@
-#include "cube.h"
 #include <stdio.h>
-
+#include "cube.h"
+#include "colors.h"
+#include "piece.h"
 
 int main(void)
 {

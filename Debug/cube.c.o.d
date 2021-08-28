@@ -1,5 +1,3 @@
-Debug/cube.c.o: cube.c cube.h colors.h
+Debug/cube.c.o: cube.c cube.h
 
 cube.h:
-
-colors.h:

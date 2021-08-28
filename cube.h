@@ -11,8 +11,10 @@
 
 #ifndef cube_h
 #define cube_h
-#endif
-#include "colors.h"
+
+
+//#include "colors.h"
+//#include "piece.h"
 
 // Definizioni    *******************************************************
 #define X_Fw  1 // Forward  means X = +1
@@ -32,27 +34,14 @@ typedef enum
     z_ax  // orange and red faces
 } axis;
 
+
 typedef enum 
 {
     Cw, // clockwise wise
     CCw // counter clockwise wise
 } dir;
 
-// piece is 3 axis piece of cube that contains 1, 2 or 3 tiles
-typedef struct piece
-{
-    color color[3];
-} piece;
-
-// Prototipo funzioni ***************************************************
-
-int piece_set_axis(piece * p, axis a, color c); // set the color of the prefixed axes
-color get_piece(piece p, axis a);
-int piece_define(piece *  p, color cx, color cy, color cz);
-int piece_copy(piece * d_ptr, piece * s_ptr);
-int piece_rotate(piece * p, axis a);
-int piece_print(piece p);
-
+#endif
 
 
 

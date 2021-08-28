@@ -3,6 +3,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="piece.c"/>
+    <File Name="piece.h"/>
     <File Name="colors.c"/>
     <File Name="colors.h"/>
     <File Name="temp" ExcludeProjConfig="Debug;"/>

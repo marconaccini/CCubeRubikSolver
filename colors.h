@@ -10,7 +10,7 @@
 // Inclusioni     *******************************************************
 #ifndef colors_h
 #define colors_h
-#endif
+
 
 // Definizioni    *******************************************************
 
@@ -25,7 +25,7 @@ typedef enum
      Or, // Orange
      Rd  // Red
 } color;
-
+#endif
 
 // Strutture dati *******************************************************
 
