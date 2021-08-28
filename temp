@@ -1,0 +1,37 @@
+
+
+int piece_define(piece p, color cx, color cy, color cy);
+int piece_copy(piece d, piece s);
+int piece_rotate(piece p, axis a, dir d);
+
+
+
+/* cube is a 3x3x3 matrix of pieces */
+typedef struct 
+{
+    piece piece[3][3][3];
+} cube;
+// cube function
+int cube_reset(cube c);
+int cube_define(cube Qb, int x, int y, int z, color c);
+int cube_rotate(cube c, axis a, dir d);
+
+typedef struct
+{
+    color tile[3][3];
+} face;
+int face_set(face f, int x, int y, color c);
+color get_face_color(face f, int x, int y);
+
+typedef struct
+{
+    face face[6];
+} planarCube;
+int Cube2planar_reset(planarCube pC);
+int Cube2planar_set(planarCube pC, color base_color, int x, int y, color c);
+color get_Cube2planar(color base_color, int x, int y);
+int Cube2planarCube(planarCube pC, cube c);
+int planarCube2Cube(cube c, planarCube pC);
+
+*/
+     

@@ -1,7 +1,10 @@
+#include "cube.h"
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
-	printf("hello world\n");
-	return 0;
+    piece p;
+    piece_define(p, Rd, Nc, Gr);
+    printf("Color of tile x of piece is: %d", get_piece(p, x_ax));
+    return 0;
 }

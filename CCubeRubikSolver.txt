@@ -1,0 +1,1 @@
+./Debug/NaccLib.c.o ./Debug/cube.c.o

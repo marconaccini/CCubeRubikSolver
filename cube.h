@@ -17,33 +17,41 @@
 
 // Strutture dati *******************************************************
 
-/* tile: tile color*/
-typedef enum {
-     Nc, // non - colore
-     Wh, // Bianco
-     Ye, // Giallo
+/* color: colors of cube*/
+typedef enum 
+{
+     Nc, // no color
+     Wh, // White
+     Ye, // Yellow
      Bl, // Blue
      Gr, // Green
-     Or, // Arancione
+     Or, // Orange
      Rd  // Red
-} tile;
+} color;
 
 /* indicates an axis */
 typedef enum 
 {
-    x,
-    y,
-    z
-}
-axis;
+    x_ax, // white and yellow faces
+    y_ax, // blue and green faces
+    z_ax  // orange and red faces
+} axis;
 
-/* piece is 3 axis piece of cube that contains 1, 2 or 3 tiles*/
-typedef tile piece[3];
+typedef enum 
+{
+    Cw, // clockwise wise
+    CCw // counter clockwise wise
+} dir;
+
+
+// piece is 3 axis piece of cube that contains 1, 2 or 3 tiles
+typedef struct
+{
+    color color[3];
+} piece;
 // piece functions
-int piece_define(piece p, X_col, Y_col, Z_col);
-int piece_copy(piece d, piece s);
-int piece_rotate(piece p, axis a);
-
-     
+int piece_set_axis(piece p, axis a, color c); // set the color of the prefixed axes
+color get_piece(piece p, axis a);
+int piece_define(piece p, color cx, color cy, color cz);
 
      
