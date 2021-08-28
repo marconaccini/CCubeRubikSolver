@@ -30,6 +30,8 @@ typedef enum
      Or, // Orange
      Rd  // Red
 } color;
+char * color_print(color c);
+char * color_print_short(color c);
 
 /* indicates an axis */
 typedef enum 
@@ -54,5 +56,9 @@ typedef struct piece
 int piece_set_axis(piece * p, axis a, color c); // set the color of the prefixed axes
 color get_piece(piece p, axis a);
 int piece_define(piece *  p, color cx, color cy, color cz);
+int piece_copy(piece * d_ptr, piece * s_ptr);
+int piece_rotate(piece * p, axis a);
+int piece_print(piece p);
+
 
      

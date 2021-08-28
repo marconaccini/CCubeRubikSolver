@@ -1,6 +1,6 @@
 
 
-int piece_define(piece p, color cx, color cy, color cy);
+
 int piece_copy(piece d, piece s);
 int piece_rotate(piece p, axis a, dir d);
 

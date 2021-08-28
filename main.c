@@ -4,11 +4,25 @@
 
 int main(void)
 {
+    // tests
+    
     piece p;
     p.color[0] = 12;
     piece_define(& p, Rd, Nc, Gr);
-    printf("Color of tile x of piece is: %d\n", get_piece(p, x_ax));
-    printf("Color of tile y of piece is: %d\n", get_piece(p, y_ax));
-    printf("Color of tile y of piece is: %d\n", get_piece(p, z_ax));
+    printf("Original p piece - step 1\n");
+    piece_print(p);
+
+    piece s;
+    piece_copy(& s, & p);
+    
+    printf("s piece copied from p - step 2\n");
+    
+    piece_print(s);
+    
+    piece_rotate(& s, x_ax);
+    
+    printf("s piece rotated - step 3\n");
+    
+    piece_print(s);
     return 0;
 }
