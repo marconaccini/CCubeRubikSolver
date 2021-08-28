@@ -3,13 +3,13 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="temp"/>
+    <File Name="temp" ExcludeProjConfig="Debug;"/>
     <File Name="cube.c"/>
     <File Name="NaccLib.c"/>
-    <File Name="NaccModel.txt"/>
+    <File Name="NaccModel.txt" ExcludeProjConfig="Debug;"/>
     <File Name="NaccLib.h"/>
     <File Name="cube.h"/>
-    <File Name="main.c" ExcludeProjConfig="Debug;"/>
+    <File Name="main.c" ExcludeProjConfig=""/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

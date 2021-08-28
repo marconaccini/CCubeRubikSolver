@@ -43,7 +43,6 @@ typedef enum
     CCw // counter clockwise wise
 } dir;
 
-
 // piece is 3 axis piece of cube that contains 1, 2 or 3 tiles
 typedef struct
 {

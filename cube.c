@@ -37,9 +37,11 @@ color get_piece(piece p, axis a)
 
 int piece_define(piece p, color cx, color cy, color cz)
 {
-    p.color[x_ax] = cx;
-    p.color[y_ax] = cy;
-    p.color[z_ax] = cz;
+    p.color[0] = 8;
+    //piece_set(p, x_ax, cx);
+    //piece_set(p, y_ax, cy);
+    //piece_set(p, z_ax, cz);
+
     return 0;
 }
 
