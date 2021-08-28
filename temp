@@ -1,11 +1,4 @@
 
-
-
-int piece_copy(piece d, piece s);
-int piece_rotate(piece p, axis a, dir d);
-
-
-
 /* cube is a 3x3x3 matrix of pieces */
 typedef struct 
 {

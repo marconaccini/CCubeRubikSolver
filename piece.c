@@ -26,18 +26,18 @@ int piece_set(piece * p_ptr, axis a, color c)
     return 0;
 }
 
-color get_piece(piece p, axis a)
+color get_piece_color(piece p, axis a)
 {
     return p.color[(int) a];
 }
 
-int piece_define(piece * p_ptr, color cx, color cy, color cz)
+piece * piece_define(piece * p_ptr, color cx, color cy, color cz)
 {
     piece_set(p_ptr, x_ax, cx);
     piece_set(p_ptr, y_ax, cy);
     piece_set(p_ptr, z_ax, cz);
 
-    return 0;
+    return p_ptr;
 }
 
 int piece_copy(piece * d_ptr, piece * s_ptr)
@@ -73,9 +73,9 @@ int swap(color * x_ptr, color * y_ptr)
 int piece_print(piece p)
 {
     char col[10];
-    strcpy(col, color_print(get_piece(p, x_ax)));
+    strcpy(col, color_print(get_piece_color(p, x_ax)));
     printf("Color of tile x of piece is: %s \n", col);
-    printf("Color of tile y of piece is: %s \n", color_print(get_piece(p, y_ax)));
-    printf("Color of tile z of piece is: %s \n", color_print(get_piece(p, z_ax)));
+    printf("Color of tile y of piece is: %s \n", color_print(get_piece_color(p, y_ax)));
+    printf("Color of tile z of piece is: %s \n", color_print(get_piece_color(p, z_ax)));
     return 0;
 }
