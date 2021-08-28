@@ -9,7 +9,6 @@
 *H*/
 
 // Inclusioni     *******************************************************
-#include "NaccLib.h"
 #include "cube.h"
 #include <stdio.h>
 #include <string.h>
@@ -24,9 +23,9 @@
 // Prototipo funzioni ***************************************************
 
 // Implementazione funzioni *********************************************
-int piece_set(piece p, axis a, color c)
+int piece_set(piece * p_ptr, axis a, color c)
 {
-    p.color[(int) a] = c;
+    p_ptr->color[(int) a] = c;
     return 0;
 }
 
@@ -35,12 +34,11 @@ color get_piece(piece p, axis a)
     return p.color[(int) a];
 }
 
-int piece_define(piece p, color cx, color cy, color cz)
+int piece_define(piece * p_ptr, color cx, color cy, color cz)
 {
-    p.color[0] = 8;
-    //piece_set(p, x_ax, cx);
-    //piece_set(p, y_ax, cy);
-    //piece_set(p, z_ax, cz);
+    piece_set(p_ptr, x_ax, cx);
+    piece_set(p_ptr, y_ax, cy);
+    piece_set(p_ptr, z_ax, cz);
 
     return 0;
 }

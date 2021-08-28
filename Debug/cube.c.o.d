@@ -1,5 +1,3 @@
-Debug/cube.c.o: cube.c NaccLib.h cube.h
-
-NaccLib.h:
+Debug/cube.c.o: cube.c cube.h
 
 cube.h:

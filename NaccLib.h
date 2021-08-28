@@ -9,29 +9,15 @@
 
 // Inclusioni     *******************************************************
 
+
 // Definizioni    *******************************************************
 
-#ifndef Pointer
+#if !defined NaccLib_h
 #define Pointer *
-#endif
-
-#ifndef GetPointerVal
 #define GetPointerVal *
-#endif
-
-#ifndef GetPointerAddr
-#define GetPointerAddr *
-#endif
-
-//#ifndef MIN(X, Y)
+#define GetPointerAddr &
 #define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
-//#endif
-
-//#ifndef COPY(X, Y)
 #define COPY(X, Y) memcpy(X, Y,MIN(X, Y))
-// #endif
-
-// Strutture dati *******************************************************
-typedef enum {false, true} boolean;
+#endif
 
 // Prototipo funzioni ***************************************************

@@ -7,6 +7,8 @@
 *
 * AUTHOR :    Naccini Marco        START DATE :    28/08/21 
 *H*/
+
+
 // Definizioni    *******************************************************
 #define X_Fw  1 // Forward  means X = +1
 #define X_Bw -1 // Backward means X = -1
@@ -44,13 +46,13 @@ typedef enum
 } dir;
 
 // piece is 3 axis piece of cube that contains 1, 2 or 3 tiles
-typedef struct
+typedef struct piece
 {
     color color[3];
 } piece;
 // piece functions
-int piece_set_axis(piece p, axis a, color c); // set the color of the prefixed axes
+int piece_set_axis(piece * p, axis a, color c); // set the color of the prefixed axes
 color get_piece(piece p, axis a);
-int piece_define(piece p, color cx, color cy, color cz);
+int piece_define(piece *  p, color cx, color cy, color cz);
 
      
