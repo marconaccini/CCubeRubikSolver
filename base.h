@@ -41,6 +41,24 @@ typedef enum
     CCw // counter clockwise wise
 } dir;
 
+typedef enum
+{
+    F_rot,
+    Fp_rot,
+    B_rot,
+    Bp_rot,
+    
+    L_rot,
+    Lp_rot,
+    R_rot,
+    Rp_rot,
+    
+    U_rot,
+    Up_rot,
+    D_rot,
+    Dp_rot,
+} Singmaster; 
+
 #endif
 
 // Prototipo funzioni ***************************************************

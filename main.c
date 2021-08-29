@@ -65,4 +65,9 @@ void Test3_FaceRotate()
     cube_rotate(& q, Wh, Cw);
     printf("Piece in position (X_Fw, Y_Md, Z_Up) after rotation\n");
     piece_print(* get_cube_piece(& p, q, X_Fw, Y_Md, Z_Up));
+    
+    // Cube F' Singmaster rotation 
+    cube_rotate_Singmaster(& q, Fp_rot);
+    printf("Piece in position (X_Fw, Y_Md, Z_Up) after F Singmaster rotation\n");
+    piece_print(* get_cube_piece(& p, q, X_Fw, Y_Md, Z_Up));
 }

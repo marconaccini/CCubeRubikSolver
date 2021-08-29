@@ -1,14 +1,4 @@
 
-/* cube is a 3x3x3 matrix of pieces */
-typedef struct 
-{
-    piece piece[3][3][3];
-} cube;
-// cube function
-int cube_reset(cube c);
-int cube_define(cube Qb, int x, int y, int z, color c);
-int cube_rotate(cube c, axis a, dir d);
-
 typedef struct
 {
     color tile[3][3];

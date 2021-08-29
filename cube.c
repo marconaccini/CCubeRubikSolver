@@ -86,7 +86,7 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
     {
         for  (c2 = -1; c2 <= 1; c2++)
         {
-            if ((f == Wh))
+            if ((f == Wh)) 
             {
                 /* debug purpose only */
                 if ((c1 == 0) && (c2 == 1))
@@ -96,24 +96,28 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 get_cube_piece(& or_p, * q_ptr, X_Fw, c1, c2);
                 piece_rotate(& or_p, x_ax);
                 if (d == Cw)
-                {
+                { 
+                    // F Rotation
                     cube_piece_define(& dcube, X_Fw, c2, - c1, or_p);
                 }
                 else
-                {
+                {  
+                    // F' Rotation
                     cube_piece_define(& dcube, X_Fw, - c2, c1, or_p);
                 }              
             }   
             else if ((f == Ye))
-            {
+            {   
                 get_cube_piece(& or_p, * q_ptr, X_Bw, c1, c2);
                 piece_rotate(& or_p, x_ax);
                 if (d == Cw)
-                {
+                { 
+                    // B Rotation
                     cube_piece_define(& dcube, X_Bw, c2, - c1, or_p);
-                }
+                } 
                 else
                 {
+                    // B' Rotation
                     cube_piece_define(& dcube, X_Bw, - c2, c1, or_p);
                 }              
             }   
@@ -122,11 +126,13 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 get_cube_piece(& or_p, * q_ptr, c1, Y_Rg, c2);
                 piece_rotate(& or_p, y_ax);
                 if (d == Cw)
-                {
+                { 
+                    // R Rotation
                     cube_piece_define(& dcube, c2, Y_Rg, - c1, or_p);
                 }
                 else
-                {
+                {  
+                    // R' Rotation
                     cube_piece_define(& dcube, - c2, Y_Rg, c1, or_p);
                 }              
             }   
@@ -136,10 +142,12 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, y_ax);
                 if (d == Cw)
                 {
+                    // L Rotation
                     cube_piece_define(& dcube, c2, Y_Lf, - c1, or_p);
                 }
                 else
                 {
+                    // L' Rotation
                     cube_piece_define(& dcube, - c2, Y_Lf, c1, or_p);
                 }              
             }  
@@ -149,10 +157,12 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, z_ax);
                 if (d == Cw)
                 {
+                    // U Rotation
                     cube_piece_define(& dcube, c2, - c1, Z_Up, or_p);
                 }
                 else
                 {
+                    // U' Rotation
                     cube_piece_define(& dcube, - c2, c1, Z_Up, or_p);
                 }              
             }   
@@ -162,10 +172,12 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, z_ax);
                 if (d == Cw)
                 {
+                    // D Rotation
                     cube_piece_define(& dcube, c2, - c1, Z_Dw, or_p);
                 }
                 else
                 {
+                    // D' Rotation
                     cube_piece_define(& dcube, - c2, c1, Z_Dw, or_p);
                 }              
             } 
@@ -175,4 +187,48 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
     memcpy(q_ptr, & dcube, sizeof(cube));
     
     return q_ptr;
+}
+
+cube * cube_rotate_Singmaster (cube * q, Singmaster rt)
+{
+    switch (rt)
+    {
+    case F_rot:
+        cube_rotate(q, Wh, Cw);
+        break;
+    case Fp_rot:
+        cube_rotate(q, Wh, CCw);
+        break;
+    case B_rot:
+        cube_rotate(q, Ye, Cw);
+        break;
+    case Bp_rot:
+        cube_rotate(q, Ye, CCw);
+        break;
+    case R_rot:
+        cube_rotate(q, Bl, Cw);
+        break;
+    case Rp_rot:
+        cube_rotate(q, Bl, CCw);
+        break;
+    case L_rot:
+        cube_rotate(q, Gr, Cw);
+        break;
+    case Lp_rot:
+        cube_rotate(q, Gr, CCw);
+        break;
+    case U_rot:
+        cube_rotate(q, Or, Cw);
+        break;
+    case Up_rot:
+        cube_rotate(q, Or, CCw);
+        break;
+    case D_rot:
+        cube_rotate(q, Or, Cw);
+        break;
+    case Dp_rot:
+        cube_rotate(q, Rd, CCw);
+        break;
+    }
+    return & q;
 }
