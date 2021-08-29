@@ -55,9 +55,13 @@ void Test3_FaceRotate()
 {
     cube q;
     piece p;
+    
+    // Cube creation
     cube_AsNew(& q);
     printf("Piece in position (X_Fw, Y_Md, Z_Up) before rotation\n");
     piece_print(* get_cube_piece(& p, q, X_Fw, Y_Md, Z_Up));
+    
+    // Cube white face rotation clockwise
     cube_rotate(& q, Wh, Cw);
     printf("Piece in position (X_Fw, Y_Md, Z_Up) after rotation\n");
     piece_print(* get_cube_piece(& p, q, X_Fw, Y_Md, Z_Up));
