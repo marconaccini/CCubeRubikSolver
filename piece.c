@@ -48,14 +48,21 @@ int piece_copy(piece * d_ptr, piece * s_ptr)
 
 int piece_rotate(piece * p, axis a)
 {
+//    color *ca;
+//    color *cb;
     switch (a)
     {
         case x_ax:
+//            ca = & p->color[1];
+//            cb = & p->color[2];
             swap(& p->color[y_ax], & p->color[z_ax]);
+            break;
         case y_ax:
             swap(& p->color[x_ax], & p->color[z_ax]);
+            break;
         case z_ax:
             swap(& p->color[y_ax], & p->color[x_ax]);
+            break;
     }
 
     return 0;
@@ -72,9 +79,7 @@ int swap(color * x_ptr, color * y_ptr)
 
 int piece_print(piece p)
 {
-    char col[10];
-    strcpy(col, color_print(get_piece_color(p, x_ax)));
-    printf("Color of tile x of piece is: %s \n", col);
+    printf("Color of tile x of piece is: %s \n", color_print(get_piece_color(p, x_ax)));
     printf("Color of tile y of piece is: %s \n", color_print(get_piece_color(p, y_ax)));
     printf("Color of tile z of piece is: %s \n", color_print(get_piece_color(p, z_ax)));
     return 0;

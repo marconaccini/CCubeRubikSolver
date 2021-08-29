@@ -25,8 +25,8 @@ typedef struct
 // cube function
 cube * cube_AsNew(cube * q);
 cube * cube_piece_define(cube * q, int x, int y, int z, piece p);
-piece * get_cube_piece(piece * p_ptr, cube q_ptr, int x, int y, int z);
-//int cube_rotate(cube q, axis a, dir d);
+piece * get_cube_piece(piece * p_ptr, cube q, int x, int y, int z);
+cube * cube_rotate(cube * q, color f, dir d);
 
 #endif
      

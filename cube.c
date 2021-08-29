@@ -69,6 +69,102 @@ cube * cube_AsNew(cube * q_ptr)
 
 piece * get_cube_piece(piece * p_ptr, cube q, int x, int y, int z)
 {
-    piece_copy(p_ptr, & q.piece[x+1][y+1][z+1]);
+    piece * pt_ptr = & q.piece[x+1][y+1][z+1];
+    piece_copy(p_ptr, pt_ptr);
     return p_ptr;
+}
+
+cube * cube_rotate(cube * q_ptr, color f, dir d)
+{
+    piece or_p;
+    
+    cube_AsNew(q_ptr);
+    
+    int c1, c2;
+    
+    for (c1 = -1; c1 < 2; c1++)
+    {
+        for  (c2 = -1; c2 < 2; c2++)
+        {
+            if ((f == Wh))
+            {
+                get_cube_piece(& or_p, * q_ptr, X_Fw, c1, c2);
+                piece_rotate(& or_p, x_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, X_Fw, c1, - c2, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, X_Fw, - c1, c2, or_p);
+                }              
+            }   
+            else if ((f == Ye))
+            {
+                get_cube_piece(& or_p, * q_ptr, X_Bw, c1, c2);
+                piece_rotate(& or_p, x_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, X_Bw, c1, - c2, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, X_Bw, - c1, c2, or_p);
+                }              
+            }   
+            else if ((f == Bl))
+            {
+                get_cube_piece(& or_p, * q_ptr, c1, Y_Rg, c2);
+                piece_rotate(& or_p, y_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, c1, Y_Rg, - c2, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, - c1, Y_Rg, c2, or_p);
+                }              
+            }   
+            else if ((f == Gr))
+            {
+                get_cube_piece(& or_p, * q_ptr, c1, Y_Lf, c2);
+                piece_rotate(& or_p, y_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, c1, Y_Lf, - c2, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, - c1, Y_Lf, c2, or_p);
+                }              
+            }  
+            else if ((f == Or))
+            {
+                get_cube_piece(& or_p, * q_ptr, c1, c2, Z_Up);
+                piece_rotate(& or_p, z_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, c1, - c2, Z_Up, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, - c1, c2, Z_Up, or_p);
+                }              
+            }   
+            else if ((f == Gr))
+            {
+                get_cube_piece(& or_p, * q_ptr, c1, c2, Z_Dw);
+                piece_rotate(& or_p, z_ax);
+                if (d == Cw)
+                {
+                    cube_piece_define(q_ptr, c1, - c2, Z_Dw, or_p);
+                }
+                else
+                {
+                    cube_piece_define(q_ptr, - c1, c2, Z_Dw, or_p);
+                }              
+            } 
+        }
+    }
+    return q_ptr;
 }
