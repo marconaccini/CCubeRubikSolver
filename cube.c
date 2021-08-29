@@ -77,26 +77,31 @@ piece * get_cube_piece(piece * p_ptr, cube q, int x, int y, int z)
 cube * cube_rotate(cube * q_ptr, color f, dir d)
 {
     piece or_p;
-    
-    cube_AsNew(q_ptr);
+    cube dcube; // destination cube
+    cube_AsNew(& dcube);
     
     int c1, c2;
     
-    for (c1 = -1; c1 < 2; c1++)
+    for (c1 = -1; c1 <= 1; c1++)
     {
-        for  (c2 = -1; c2 < 2; c2++)
+        for  (c2 = -1; c2 <= 1; c2++)
         {
             if ((f == Wh))
             {
+                /* debug purpose only */
+                if ((c1 == 0) && (c2 == 1))
+                {
+                    printf("I'm just here");
+                }
                 get_cube_piece(& or_p, * q_ptr, X_Fw, c1, c2);
                 piece_rotate(& or_p, x_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, X_Fw, c1, - c2, or_p);
+                    cube_piece_define(& dcube, X_Fw, c2, - c1, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, X_Fw, - c1, c2, or_p);
+                    cube_piece_define(& dcube, X_Fw, - c2, c1, or_p);
                 }              
             }   
             else if ((f == Ye))
@@ -105,11 +110,11 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, x_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, X_Bw, c1, - c2, or_p);
+                    cube_piece_define(& dcube, X_Bw, c2, - c1, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, X_Bw, - c1, c2, or_p);
+                    cube_piece_define(& dcube, X_Bw, - c2, c1, or_p);
                 }              
             }   
             else if ((f == Bl))
@@ -118,11 +123,11 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, y_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, c1, Y_Rg, - c2, or_p);
+                    cube_piece_define(& dcube, c2, Y_Rg, - c1, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, - c1, Y_Rg, c2, or_p);
+                    cube_piece_define(& dcube, - c2, Y_Rg, c1, or_p);
                 }              
             }   
             else if ((f == Gr))
@@ -131,11 +136,11 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, y_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, c1, Y_Lf, - c2, or_p);
+                    cube_piece_define(& dcube, c2, Y_Lf, - c1, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, - c1, Y_Lf, c2, or_p);
+                    cube_piece_define(& dcube, - c2, Y_Lf, c1, or_p);
                 }              
             }  
             else if ((f == Or))
@@ -144,11 +149,11 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, z_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, c1, - c2, Z_Up, or_p);
+                    cube_piece_define(& dcube, c2, - c1, Z_Up, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, - c1, c2, Z_Up, or_p);
+                    cube_piece_define(& dcube, - c2, c1, Z_Up, or_p);
                 }              
             }   
             else if ((f == Gr))
@@ -157,14 +162,17 @@ cube * cube_rotate(cube * q_ptr, color f, dir d)
                 piece_rotate(& or_p, z_ax);
                 if (d == Cw)
                 {
-                    cube_piece_define(q_ptr, c1, - c2, Z_Dw, or_p);
+                    cube_piece_define(& dcube, c2, - c1, Z_Dw, or_p);
                 }
                 else
                 {
-                    cube_piece_define(q_ptr, - c1, c2, Z_Dw, or_p);
+                    cube_piece_define(& dcube, - c2, c1, Z_Dw, or_p);
                 }              
             } 
         }
     }
+    
+    memcpy(q_ptr, & dcube, sizeof(cube));
+    
     return q_ptr;
 }
