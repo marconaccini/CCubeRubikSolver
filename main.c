@@ -1,3 +1,12 @@
+/*H**********************************************************************
+* FILENAME :        main.c
+*
+* DESCRIPTION :
+*       main and test base for 
+*
+* AUTHOR :    Naccini Marco        START DATE :    28/08/21 
+*H***********************************************************************/
+
 #include <stdio.h>
 #include "base.h"
 #include "colors.h"

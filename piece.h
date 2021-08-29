@@ -11,7 +11,6 @@
 #ifndef piece_h
 #define piece_h
 
-
 #include "base.h"
 #include "colors.h"
 

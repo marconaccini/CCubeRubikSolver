@@ -15,6 +15,8 @@
 // Definizioni    *******************************************************
 
 // Definizioni    *******************************************************
+
+// - Coordinates
 #define X_Fw  1 // Forward  means X = +1
 #define X_Md  0 // Middle  means X = 0
 #define X_Bw -1 // Backward means X = -1
@@ -27,7 +29,7 @@
 
 // Strutture dati *******************************************************
 
-/* indicates an axis */
+/* rappresents x,y,z axis selector*/
 typedef enum 
 {
     x_ax, // white and yellow faces
@@ -35,12 +37,14 @@ typedef enum
     z_ax  // orange and red faces
 } axis;
 
+/* rappresents rotation cw/ccw selector*/
 typedef enum 
 {
     Cw, // clockwise wise
     CCw // counter clockwise wise
 } dir;
 
+/* rappresents Singmaster selector*/
 typedef enum
 {
     F_rot,
