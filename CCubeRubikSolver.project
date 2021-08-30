@@ -3,6 +3,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="pcube.c"/>
     <File Name="pcube.h"/>
     <File Name="base.c"/>
     <File Name="base.h"/>

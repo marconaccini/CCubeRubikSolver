@@ -230,5 +230,5 @@ cube * cube_rotate_Singmaster (cube * q, Singmaster rt)
         cube_rotate(q, Rd, CCw);
         break;
     }
-    return & q;
+    return q;
 }
