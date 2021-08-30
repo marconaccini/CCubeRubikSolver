@@ -37,13 +37,14 @@ typedef struct
 color  get_face_color(face f, int x, int y);
 face * set_face_color(face * f, int x, int y, color c);
 void   face_copy(face * d, face * s);
-//
-//face * get_pcube_face(face * f, pcube q, color base_color);
-//void   set_pcube_face(pcube * pq, face * f);
-//
-//face * get_cube_face(face * f, cube q, color base_color);
-//
-//void pcube2cube(cube * q, pcube * pq);
-//void cube2pcube(pcube * pq, cube * q);
+face * set_face_colors(face * f, color * c);
+
+face * get_pcube_face(face * f, pCube q, color base_color);
+void   set_pcube_face(pCube * pq, face f, color base_color);
+
+face * get_cube_face(face * f, cube q, color base_color);
+
+//void pcube2cube(cube * q, pCube * pq);
+//void cube2pcube(pCube * pq, cube * q);
 
 #endif

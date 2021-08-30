@@ -28,6 +28,7 @@ cube * cube_piece_define(cube * q, int x, int y, int z, piece p);
 piece * get_cube_piece(piece * p_ptr, cube q, int x, int y, int z);
 cube * cube_rotate(cube * q, color f, dir d);
 cube * cube_rotate_Singmaster (cube * q, Singmaster r);
+color get_color_of_piece_of_cube_by_orientation(cube q, int piece_x, int piece_y, int piece_z, axis orientation);
 
 #endif
      

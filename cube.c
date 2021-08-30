@@ -33,6 +33,19 @@ cube * cube_piece_define(cube * q_ptr, int x, int y, int z, piece p)
 cube * cube_AsNew(cube * q_ptr)
 {
     piece t;
+    
+    int x,y,z,c;
+    for (x = -1; x <= 1; x++)
+    {
+        for (y = -1; y <= 1; y++)
+        {
+            for (z = -1; z <= 1; z++)
+            {
+                for (c = 0; c <= 2; c++) 
+                    q_ptr->piece[x+1][y+1][z+1].color[c] = Nc;
+            }
+        }
+    }
     // Forward layer
     cube_piece_define(q_ptr, X_Fw, Y_Md, Z_Up, * piece_define(& t, Wh, Nc, Or) );
     cube_piece_define(q_ptr, X_Fw, Y_Rg, Z_Up, * piece_define(& t, Wh, Bl, Or) );
@@ -67,11 +80,12 @@ cube * cube_AsNew(cube * q_ptr)
     return q_ptr;
 }
 
-piece * get_cube_piece(piece * p_ptr, cube q, int x, int y, int z)
+piece * get_cube_piece(piece * out_piece_ptr, cube q, int x, int y, int z)
 {
-    piece * pt_ptr = & q.piece[x+1][y+1][z+1];
-    piece_copy(p_ptr, pt_ptr);
-    return p_ptr;
+    piece * q_piece_ptr;
+    q_piece_ptr = & q.piece[x+1][y+1][z+1];
+    piece_copy(out_piece_ptr, q_piece_ptr);
+    return out_piece_ptr;
 }
 
 cube * cube_rotate(cube * q_ptr, color f, dir d)
@@ -231,4 +245,16 @@ cube * cube_rotate_Singmaster (cube * q, Singmaster rt)
         break;
     }
     return q;
+}
+
+color get_color_of_piece_of_cube_by_orientation(
+    cube q,
+    int piece_x, 
+    int piece_y, 
+    int piece_z, axis orientation)
+{
+    piece p;
+    get_cube_piece(& p, q, piece_x, piece_y, piece_z);
+    color c = p.color[(int) orientation];
+    return c;
 }

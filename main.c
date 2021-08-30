@@ -23,9 +23,9 @@ int main(void)
 {
  
     // Test1_PieceCreate();
-    // Test2_CubeCreate();  
+    Test2_CubeCreate();  
     // Test3_FaceRotate();
-    Test4_Face();
+    // Test4_Face();
     
     return 0;
 }
@@ -60,7 +60,13 @@ void Test2_CubeCreate(void )
     
     cube_AsNew(& q);
     piece_print(q.piece[2][1][2]);
+    
     piece_print(* get_cube_piece(& p, q, X_Fw, Y_Lf, Z_Up));
+    
+    printf("Color of tile with 'x' orientation of piece (1,0,1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Fw, Y_Md, Z_Up, z_ax)));
+    printf("Color of tile with 'y' orientation of piece (0,-1, -1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Md, Y_Lf, Z_Dw, y_ax)));
+    printf("Color of tile with 'z' orientation of piece (0,-1, -1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Md, Y_Lf, Z_Dw, z_ax)));
+    printf("Right !\n");
 }
 
 void Test3_FaceRotate()
@@ -91,7 +97,14 @@ void Test4_Face(void)
     set_face_color(& f,  0,  0, Rd);
     printf("Color of tile -1, 1 of face is %s \n", color_print( get_face_color(f, -1, 1)));
     printf("Color of tile  0, 0 of face is %s \n", color_print( get_face_color(f, 0, 0)));
+    
     face f2;
     face_copy(& f2, & f);
     printf("Color of tile  0, 0 of face 2 is %s \n", color_print( get_face_color(f2, 0, 0)));
+    
+    face f3;
+    set_face_colors(& f3, (color []) {Wh, Or, Wh, Rd, Bl, Rd, Gr, Gr, Gr});
+    printf("Color of tile  0, 0 of face 3 is %s \n", color_print( get_face_color(f3, 0, 0)));
+    set_face_colors(& f3, (color []) {Wh, Or, Wh, Rd, Ye, Rd, Gr, Gr, Gr});
+    printf("Color of tile  0, 0 of face 3 is %s \n", color_print( get_face_color(f3, 0, 0)));
 }
