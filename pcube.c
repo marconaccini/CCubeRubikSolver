@@ -63,13 +63,80 @@ void   set_pcube_face(pCube * pq, face f, color base_color)
 
 face * get_cube_face(face * f, cube q, color base_color)
 {
-//    color c;
-//    switch(base_color)
-//    {
-//        case Wh:
-//            q.piece
-//            break;
-//    }
+    int * cx;
+    int * cy;
+    int * cz;
+    int k;
+    int fx;
+    int fy;
+    
+    axis orientation;
+    
+    color c;
+
+    switch(base_color)
+    {
+        case Wh:
+            k = X_Fw; 
+            cx = & k;
+            cy = & fx;
+            cz = & fy;
+            orientation = x_ax;
+        break;
+
+        case Ye:
+            k = X_Bw; 
+            cx = & k;
+            cy = & fx;
+            cz = & fy;
+            orientation = x_ax;
+        break;
+        
+        case Bl:
+            k = Y_Rg; 
+            cx = & fx;
+            cy = & k;
+            cz = & fy;
+            orientation = y_ax;
+        break;
+
+        case Gr:
+            k = Y_Lf; 
+            cx = & fx;
+            cy = & k;
+            cz = & fy;
+            orientation = y_ax;
+        break;
+        
+        case Or:
+            k = Z_Up; 
+            cx = & fx;
+            cy = & fy;
+            cz = & k;
+            orientation = z_ax;
+        break;
+
+        case Rd:
+            k = Z_Dw; 
+            cx = & fx;
+            cy = & fy;
+            cz = & k;
+            orientation = z_ax;
+        break;
+        
+        case Nc:
+        break;
+    }
+    
+    for (fx = -1; fx < 2; fx++)
+    {
+        for (fy = -1; fy < 2; fy++)
+        {
+            c = get_color_of_piece_of_cube_by_orientation(q, * cx, * cy , * cz, orientation);
+            set_face_color(f, fx, fy, c);
+        }
+    }
+            
     return 0;
 }
 
