@@ -91,5 +91,7 @@ void Test4_Face(void)
     set_face_color(& f,  0,  0, Rd);
     printf("Color of tile -1, 1 of face is %s \n", color_print( get_face_color(f, -1, 1)));
     printf("Color of tile  0, 0 of face is %s \n", color_print( get_face_color(f, 0, 0)));
-    
+    face f2;
+    face_copy(& f2, & f);
+    printf("Color of tile  0, 0 of face 2 is %s \n", color_print( get_face_color(f2, 0, 0)));
 }

@@ -36,7 +36,7 @@ typedef struct
 // Prototipo funzioni ***************************************************
 color  get_face_color(face f, int x, int y);
 face * set_face_color(face * f, int x, int y, color c);
-//void   face_copy(face * d, face * s);
+void   face_copy(face * d, face * s);
 //
 //face * get_pcube_face(face * f, pcube q, color base_color);
 //void   set_pcube_face(pcube * pq, face * f);

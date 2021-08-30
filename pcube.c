@@ -29,11 +29,11 @@ face * set_face_color(face * f, int x, int y, color c)
     return f;
 }
 
-//void   face_copy(face * d, face * s)
-//{
-//    memcpy(d, s, sizeof(face));
-//}
-//
+void   face_copy(face * d, face * s)
+{
+    memcpy(d, s, sizeof(face));
+}
+
 //face * get_pcube_face(face * f, pcube pq, color base_color)
 //{
 //    * f = pq->face[(int) base_color];
