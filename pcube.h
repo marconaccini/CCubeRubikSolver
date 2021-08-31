@@ -26,10 +26,14 @@ typedef struct
 
 typedef struct
 {
-    //     [Or]
-    // [Gr][Wh][Bl]
-    //     [Rd]
-    //     [Ye]
+//       ^ y
+//       |
+//     [Or]
+// [Gr][Wh][Bl]
+//     [Rd]
+//     [Ye]
+//       ----> x
+    
     face face[6];
 } pCube;
 

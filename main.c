@@ -66,7 +66,16 @@ void Test2_CubeCreate(void )
     printf("Color of tile with 'x' orientation of piece (1,0,1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Fw, Y_Md, Z_Up, z_ax)));
     printf("Color of tile with 'y' orientation of piece (0,-1, -1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Md, Y_Lf, Z_Dw, y_ax)));
     printf("Color of tile with 'z' orientation of piece (0,-1, -1) is %s \n", color_print(get_color_of_piece_of_cube_by_orientation(q, X_Md, Y_Lf, Z_Dw, z_ax)));
-    printf("Right !\n");
+
+    cube_rotate_Singmaster(& q, F_rot); // rotation of white face clockwhise
+    // then at (1, 1, 1) colors must be (Wh, Or, Gr)
+    printf("at (1, 1, 1) colors are (%s, %s, %s) \n", 
+    color_print(get_color_of_piece_of_cube_by_orientation(q, X_Fw, Y_Rg, Z_Up, x_ax)),
+    color_print(get_color_of_piece_of_cube_by_orientation(q, X_Fw, Y_Rg, Z_Up, y_ax)),
+    color_print(get_color_of_piece_of_cube_by_orientation(q, X_Fw, Y_Rg, Z_Up, z_ax))
+    );
+    printf("Bingo !\n");
+    
 }
 
 void Test3_FaceRotate()

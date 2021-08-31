@@ -69,6 +69,10 @@ face * get_cube_face(face * f, cube q, color base_color)
     int k;
     int fx;
     int fy;
+    int ox = 1;
+    int oy = 1;
+    int ffx;
+    int ffy;
     
     axis orientation;
     
@@ -81,6 +85,8 @@ face * get_cube_face(face * f, cube q, color base_color)
             cx = & k;
             cy = & fx;
             cz = & fy;
+            ox = 1;
+            oy = 1;
             orientation = x_ax;
         break;
 
@@ -89,6 +95,8 @@ face * get_cube_face(face * f, cube q, color base_color)
             cx = & k;
             cy = & fx;
             cz = & fy;
+            ox = 1;
+            oy = -1;
             orientation = x_ax;
         break;
         
@@ -97,6 +105,8 @@ face * get_cube_face(face * f, cube q, color base_color)
             cx = & fx;
             cy = & k;
             cz = & fy;
+            ox = -1;
+            oy = 1;
             orientation = y_ax;
         break;
 
@@ -105,22 +115,28 @@ face * get_cube_face(face * f, cube q, color base_color)
             cx = & fx;
             cy = & k;
             cz = & fy;
+            ox = 1;
+            oy = 1;
             orientation = y_ax;
         break;
         
         case Or:
             k = Z_Up; 
-            cx = & fx;
-            cy = & fy;
+            cx = & fy;
+            cy = & fx;
             cz = & k;
+            ox = 1;
+            oy = -1;
             orientation = z_ax;
         break;
 
         case Rd:
             k = Z_Dw; 
-            cx = & fx;
-            cy = & fy;
+            cx = & fy;
+            cy = & fx;
             cz = & k;
+            ox = 1;
+            oy = 1;
             orientation = z_ax;
         break;
         
@@ -128,10 +144,12 @@ face * get_cube_face(face * f, cube q, color base_color)
         break;
     }
     
-    for (fx = -1; fx < 2; fx++)
+    for (ffx = -1; ffx < 2; ffx++)
     {
-        for (fy = -1; fy < 2; fy++)
+        for (ffy = -1; ffy < 2; ffy++)
         {
+            fx = ox * ffx;
+            fy = oy * ffy;
             c = get_color_of_piece_of_cube_by_orientation(q, * cx, * cy , * cz, orientation);
             set_face_color(f, fx, fy, c);
         }
