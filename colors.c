@@ -9,6 +9,7 @@
 
 // Inclusioni     *******************************************************
 #include "colors.h"
+#include <string.h>
 
 // Definizioni    *******************************************************
 
@@ -18,14 +19,16 @@
 
 // Implementazione funzioni *********************************************
 
-char * color_print(color c)
+char * color_print(char * destStr, color c)
 {
     static char col_str[7][10] = {"--", "White", "Yellow", "Blue", "Green","Orange", "Red"};
-    return col_str[(int) c];
+    strcpy(destStr, col_str[(int) c]);
+    return destStr;
 }
 
-char * color_print_short(color c)
+char * color_print_short(char * destStr, color c)
 {
-    static char col_str[7][2] = {"--", "Wh", "Ye", "Bl", "Gr", "Or", "Rd"};
-    return col_str[(int) c];
+    static char col_str[7][6] = {"--", "Wh", "Ye", "Bl", "Gr", "Or", "Rd"};
+    strcpy(destStr, col_str[(int) c]);
+    return destStr;
 }

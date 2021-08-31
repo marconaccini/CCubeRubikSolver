@@ -79,8 +79,13 @@ int swap(color * x_ptr, color * y_ptr)
 
 int piece_print(piece p)
 {
-    printf("Color of tile x of piece is: %s \n", color_print(get_piece_color(p, x_ax)));
-    printf("Color of tile y of piece is: %s \n", color_print(get_piece_color(p, y_ax)));
-    printf("Color of tile z of piece is: %s \n", color_print(get_piece_color(p, z_ax)));
+    char clr[10];
+
+    printf("Color of tile x of piece is: %s \n", 
+        color_print(clr, get_piece_color(p, x_ax)));
+    printf("Color of tile y of piece is: %s \n", 
+        color_print(clr, get_piece_color(p, y_ax)));
+    printf("Color of tile z of piece is: %s \n", 
+        color_print(clr, get_piece_color(p, z_ax)));
     return 0;
 }

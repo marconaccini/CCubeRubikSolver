@@ -29,7 +29,7 @@ typedef enum
 // Strutture dati *******************************************************
 
 // Prototipo funzioni ***************************************************
-char * color_print(color c);
-char * color_print_short(color c);
+char * color_print(char * destStr, color c);
+char * color_print_short(char * destStr, color c);
 
 #endif

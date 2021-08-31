@@ -9,6 +9,7 @@
 
 // Inclusioni     *******************************************************
 #include "pcube.h"
+#include <stdio.h> 
 #include <string.h>
 
 // Definizioni    *******************************************************
@@ -61,7 +62,7 @@ void   set_pcube_face(pCube * pq, face f, color base_color)
     face_copy(& pq->face[(int) base_color], & f);
 }
 
-face * get_cube_face(face * f, cube q, color base_color)
+face * get_cube_face(face * f_pt, cube q, color base_color)
 {
     int * cx;
     int * cy;
@@ -151,11 +152,34 @@ face * get_cube_face(face * f, cube q, color base_color)
             fx = ox * ffx;
             fy = oy * ffy;
             c = get_color_of_piece_of_cube_by_orientation(q, * cx, * cy , * cz, orientation);
-            set_face_color(f, fx, fy, c);
+            set_face_color(f_pt, fx, fy, c);
         }
     }
             
-    return 0;
+    return f_pt;
+}
+
+void   face_print(face f)
+{
+    char clr1[10];
+    char clr2[10];
+    char clr3[10];
+    printf("The face colors are: \n");
+    color_print_short(clr1, get_face_color(f, -1, 1));
+    color_print_short(clr2, get_face_color(f,  0, 1));
+    color_print_short(clr3, get_face_color(f,  1, 1));
+    printf(" [%s][%s][%s] \n", clr1, clr2, clr3);
+
+    printf(" [%s][%s][%s] \n",
+        color_print_short(clr1, get_face_color(f, -1, 0)),
+        color_print_short(clr2, get_face_color(f,  0, 0)),
+        color_print_short(clr3, get_face_color(f,  1, 0))
+        );
+    printf(" [%s][%s][%s] \n",
+        color_print_short(clr1, get_face_color(f, -1, -1)),
+        color_print_short(clr2, get_face_color(f,  0, -1)),
+        color_print_short(clr3, get_face_color(f,  1, -1))
+        );
 }
 
 //void pcube2cube(cube * q, pCube * pq);
