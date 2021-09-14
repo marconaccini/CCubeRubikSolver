@@ -1,1 +1,1 @@
-./Debug/piece.c.o ./Debug/colors.c.o ./Debug/base.c.o ./Debug/cube.c.o ./Debug/main.c.o ./Debug/pcube.c.o
+./Debug/RC_Coords.c.o ./Debug/RC_Tiles.c.o ./Debug/RubikCube.c.o ./Debug/main.c.o

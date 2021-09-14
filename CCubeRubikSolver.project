@@ -3,19 +3,13 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="pcube.c"/>
-    <File Name="pcube.h"/>
-    <File Name="base.c"/>
-    <File Name="base.h"/>
-    <File Name="piece.c"/>
-    <File Name="piece.h"/>
-    <File Name="colors.c"/>
-    <File Name="colors.h"/>
-    <File Name="temp" ExcludeProjConfig="Debug;"/>
-    <File Name="cube.c"/>
-    <File Name="NaccModel.txt" ExcludeProjConfig="Debug;"/>
-    <File Name="cube.h"/>
-    <File Name="main.c" ExcludeProjConfig=""/>
+    <File Name="RC_Coords.c"/>
+    <File Name="RC_Coords.h"/>
+    <File Name="main.c"/>
+    <File Name="RC_Tiles.c"/>
+    <File Name="RubikCube.c"/>
+    <File Name="RC_Tiles.h"/>
+    <File Name="RubikCube.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

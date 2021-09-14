@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Papa
-Date                   :=31/08/21
+Date                   :=14/09/21
 CodeLitePath           :=/home/papa/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/piece.c$(ObjectSuffix) $(IntermediateDirectory)/colors.c$(ObjectSuffix) $(IntermediateDirectory)/base.c$(ObjectSuffix) $(IntermediateDirectory)/cube.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/pcube.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/RC_Coords.c$(ObjectSuffix) $(IntermediateDirectory)/RC_Tiles.c$(ObjectSuffix) $(IntermediateDirectory)/RubikCube.c$(ObjectSuffix) $(IntermediateDirectory)/main.c$(ObjectSuffix) 
 
 
 
@@ -91,37 +91,29 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/piece.c$(ObjectSuffix): piece.c $(IntermediateDirectory)/piece.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/piece.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/piece.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/piece.c$(DependSuffix): piece.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/piece.c$(ObjectSuffix) -MF$(IntermediateDirectory)/piece.c$(DependSuffix) -MM piece.c
+$(IntermediateDirectory)/RC_Coords.c$(ObjectSuffix): RC_Coords.c $(IntermediateDirectory)/RC_Coords.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/RC_Coords.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/RC_Coords.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/RC_Coords.c$(DependSuffix): RC_Coords.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/RC_Coords.c$(ObjectSuffix) -MF$(IntermediateDirectory)/RC_Coords.c$(DependSuffix) -MM RC_Coords.c
 
-$(IntermediateDirectory)/piece.c$(PreprocessSuffix): piece.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/piece.c$(PreprocessSuffix) piece.c
+$(IntermediateDirectory)/RC_Coords.c$(PreprocessSuffix): RC_Coords.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/RC_Coords.c$(PreprocessSuffix) RC_Coords.c
 
-$(IntermediateDirectory)/colors.c$(ObjectSuffix): colors.c $(IntermediateDirectory)/colors.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/colors.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/colors.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/colors.c$(DependSuffix): colors.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/colors.c$(ObjectSuffix) -MF$(IntermediateDirectory)/colors.c$(DependSuffix) -MM colors.c
+$(IntermediateDirectory)/RC_Tiles.c$(ObjectSuffix): RC_Tiles.c $(IntermediateDirectory)/RC_Tiles.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/RC_Tiles.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/RC_Tiles.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/RC_Tiles.c$(DependSuffix): RC_Tiles.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/RC_Tiles.c$(ObjectSuffix) -MF$(IntermediateDirectory)/RC_Tiles.c$(DependSuffix) -MM RC_Tiles.c
 
-$(IntermediateDirectory)/colors.c$(PreprocessSuffix): colors.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/colors.c$(PreprocessSuffix) colors.c
+$(IntermediateDirectory)/RC_Tiles.c$(PreprocessSuffix): RC_Tiles.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/RC_Tiles.c$(PreprocessSuffix) RC_Tiles.c
 
-$(IntermediateDirectory)/base.c$(ObjectSuffix): base.c $(IntermediateDirectory)/base.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/base.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/base.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/base.c$(DependSuffix): base.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/base.c$(ObjectSuffix) -MF$(IntermediateDirectory)/base.c$(DependSuffix) -MM base.c
+$(IntermediateDirectory)/RubikCube.c$(ObjectSuffix): RubikCube.c $(IntermediateDirectory)/RubikCube.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/RubikCube.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/RubikCube.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/RubikCube.c$(DependSuffix): RubikCube.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/RubikCube.c$(ObjectSuffix) -MF$(IntermediateDirectory)/RubikCube.c$(DependSuffix) -MM RubikCube.c
 
-$(IntermediateDirectory)/base.c$(PreprocessSuffix): base.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/base.c$(PreprocessSuffix) base.c
-
-$(IntermediateDirectory)/cube.c$(ObjectSuffix): cube.c $(IntermediateDirectory)/cube.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/cube.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cube.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/cube.c$(DependSuffix): cube.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/cube.c$(ObjectSuffix) -MF$(IntermediateDirectory)/cube.c$(DependSuffix) -MM cube.c
-
-$(IntermediateDirectory)/cube.c$(PreprocessSuffix): cube.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/cube.c$(PreprocessSuffix) cube.c
+$(IntermediateDirectory)/RubikCube.c$(PreprocessSuffix): RubikCube.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/RubikCube.c$(PreprocessSuffix) RubikCube.c
 
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
@@ -130,14 +122,6 @@ $(IntermediateDirectory)/main.c$(DependSuffix): main.c
 
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
-
-$(IntermediateDirectory)/pcube.c$(ObjectSuffix): pcube.c $(IntermediateDirectory)/pcube.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/papa/CodeLiteWls/CCubeRubikSolver/pcube.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/pcube.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/pcube.c$(DependSuffix): pcube.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/pcube.c$(ObjectSuffix) -MF$(IntermediateDirectory)/pcube.c$(DependSuffix) -MM pcube.c
-
-$(IntermediateDirectory)/pcube.c$(PreprocessSuffix): pcube.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/pcube.c$(PreprocessSuffix) pcube.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
