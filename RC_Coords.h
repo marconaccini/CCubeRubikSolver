@@ -46,6 +46,16 @@ typedef enum
     Dp_rot,
 } Singmaster; 
 
+typedef enum
+{
+    sel_F_face, // forward fase = white color side
+    sel_B_face, // backward fase = yellow color side
+    sel_R_face, // right fase = blue color side
+    sel_L_face, // left fase = green color side
+    sel_U_face, // up fase = orange color side
+    sel_D_face  // down fase = red color side
+} Fase_selector;
+
 // Cube coordinates in array form
 typedef int arr3coords[3];
 
@@ -67,14 +77,32 @@ typedef struct
     int y2;
 } xy_coords;
 
-// *** functions
-
-// Converts 3D coordinates from struct to asrray
-arr3coords * coords3D_xyz2arr(arr3coords * ac, xyz_coords * xyz);
-// Converts 3D coordinates from array to struct
-xyz_coords * coords3D_arr2xyz(xyz_coords * xyz, arr3coords * ac);
+// *** Functions
 
 // Converts a 2D from cube face coordinate to a 3D coordinates using cube face color
-xyz_coords * coords_2D3D(xyz_coords * xyz, xy_coords * xy, Color f);
+xyz_coords * coords_Get_2D_from_3D
+    (
+    xyz_coords * xyz,   // destination 3D coordinates of cube (3x3x3) element
+    xy_coords * xy,     // 2D coordinates of face element ... 
+    Fase_selector f     // ... with face f
+    );
+
+// Converts a 3D from cube face coordinate to a 2D coordinates using cube face color
+xy_coords * coords_Get_3D_from_2D
+    (
+    xy_coords * xy,     // destination 2D coordinates of cube face 
+    xyz_coords * xyz,   // 3D coordinates of cube (3x3x3) element
+    Fase_selector f     // ... with face f
+    );
+
+// Test
+void RC_Coords_Test(void);
 
 #endif
+
+
+
+// Converts 3D coordinates from struct to asrray
+// arr3coords * coords3D_xyz2arr(arr3coords * ac, xyz_coords * xyz);
+// Converts 3D coordinates from array to struct
+// xyz_coords * coords3D_arr2xyz(xyz_coords * xyz, arr3coords * ac);

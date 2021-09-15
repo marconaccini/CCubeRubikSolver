@@ -5,7 +5,11 @@
 // *** Functions
 
 // * Convert a color *c* to a string
-char * get_color2string(char * destStr, Color c)
+char * get_color2string // Convert a color *c* to a string
+    (
+    char * destStr, // string destination
+    Color c         // tile color
+    )
 {
     char col_str[7][10] = {"--", "White", "Yellow", "Blue", "Green","Orange", "Red"};
     strcpy(destStr, col_str[(int) c]);
@@ -13,13 +17,21 @@ char * get_color2string(char * destStr, Color c)
 }
 
  // * Convert a tile *t* to a string
-char * get_tile2string(char * destStr, Tile t)
+char * get_tile2string // Convert a tile *t* to a string
+    (
+    char * destStr, // string destination
+    Tile t          // tile color
+    )
 {
     return get_color2string(destStr, t);
 }
 
  // * Convert a color *c* to a string in a short versione
-char * get_color2stringShort(char * destStr, Color c)
+char * get_color2stringShort  // Convert a color *c* to a string in a short versione
+    (
+    char * destStr,  // string destination
+    Color c          // tile color
+    )
 {
     char col_str[8][6] = {"--", "Wh", "Ye", "Bl", "Gn", "Or", "Rd"};
     strcpy(destStr, col_str[(int) c]);
@@ -27,7 +39,11 @@ char * get_color2stringShort(char * destStr, Color c)
 }
 
  // Convert a tile *t* to a string in a short versione
-char * get_tile2stringShort(char * destStr, Tile t)
+char * get_tile2stringShort // Convert a tile *t* to a string in a short versione
+    (
+    char * destStr, // string destination
+    Tile t           // tile color
+    )
 {
     return get_color2stringShort(destStr, t);
 }

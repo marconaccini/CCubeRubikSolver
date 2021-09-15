@@ -25,10 +25,29 @@ typedef enum
 typedef Color Tile;
 
 // Functions:
-char * get_color2string(char * destStr, Color c); // Convert a color *c* to a string
-char * get_tile2string(char * destStr, Tile t); // Convert a tile *t* to a string
-char * get_color2stringShort(char * destStr, Color c); // Convert a color *c* to a string in a short versione
-char * get_tile2stringShort(char * destStr, Tile t); // Convert a tile *t* to a string in a short versione
+char * get_color2string // Convert a color *c* to a string
+    (
+    char * destStr, // string destination
+    Color c         // tile color
+    ); 
+    
+char * get_tile2string // Convert a tile *t* to a string
+    (
+    char * destStr, // string destination
+    Tile t          // tile color
+    );
+    
+char * get_color2stringShort  // Convert a color *c* to a string in a short versione
+    (
+    char * destStr,  // string destination
+    Color c          // tile color
+    );
+    
+char * get_tile2stringShort // Convert a tile *t* to a string in a short versione
+    (
+    char * destStr, // string destination
+    Tile t           // tile color
+    );
 
 // Functions Tests:
 void RC_Tiles_Test(void);

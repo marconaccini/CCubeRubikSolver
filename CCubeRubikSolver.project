@@ -3,6 +3,8 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="RC_Elements.c"/>
+    <File Name="RC_Elements.h"/>
     <File Name="RC_Coords.c"/>
     <File Name="RC_Coords.h"/>
     <File Name="main.c"/>
