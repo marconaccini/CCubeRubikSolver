@@ -1,1 +1,1 @@
-./Debug/RubikCube.c.o ./Debug/main.c.o ./Debug/RC_Tiles.c.o ./Debug/RC_Coords.c.o
+./Debug/RubikCube.c.o ./Debug/main.c.o ./Debug/RC_Tiles.c.o ./Debug/RC_Coords.c.o ./Debug/RC_Elements.c.o

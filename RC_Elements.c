@@ -119,8 +119,8 @@ int RC_Elements_Test_elem_Set_tile(void)
 {
     Elem e;
     elem_Empty(& e);
-    elem_Set_tile(e, sel_x_axis, Rd);
-    elem_Set_tile(e, sel_z_axis, Gn);
+    elem_Set_tile(& e, sel_x_axis, Rd);
+    elem_Set_tile(& e, sel_z_axis, Gn);
     if ((e.x == Rd) &
         (e.y == Nc) &
         (e.z == Gn))
