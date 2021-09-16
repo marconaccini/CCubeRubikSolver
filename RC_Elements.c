@@ -43,9 +43,9 @@ Elem * elem_Set_tiles    // defines tile color to axis
     Color c[3]         // colors array to set
     )
     {
-        elem_Set_tile(e, sel_x_axis, c[1]);
-        elem_Set_tile(e, sel_y_axis, c[2]);
-        elem_Set_tile(e, sel_z_axis, c[3]);
+        elem_Set_tile(e, sel_x_axis, c[0]);
+        elem_Set_tile(e, sel_y_axis, c[1]);
+        elem_Set_tile(e, sel_z_axis, c[2]);
         return e;
     }
     
@@ -131,15 +131,51 @@ int RC_Elements_Test_elem_Set_tile(void)
     return -1;
 }
 
+int RC_Elements_Test_elem_Set_tiles(void)
+{
+    Elem e;
+    elem_Empty(& e);
+    elem_Set_tiles(& e, (Color [3]) {Ye, Bl, Or});
+
+    if ((e.x == Ye) &
+        (e.y == Bl) &
+        (e.z == Or))
+        {
+            printf("RC_Elements_Test_elem_Set_tiles Passed Ok \n");
+            return 0;
+        }
+    return -1;
+}
+
+int RC_Elements_Test_elem_Get_tile(void)
+{
+    Elem e;
+    elem_Empty(& e);
+    elem_Set_tiles(& e, (Color [3]) {Ye, Bl, Or});
+
+    if ((elem_Get_tile(& e, sel_y_axis) == Bl))
+        {
+            printf("RC_Elements_Test_elem_Get_tile Passed Ok \n");
+            return 0;
+        }
+    return -1;
+}
+
 // Test
 void RC_Elements_Test(void)
 {
     int err = 0;
     err += RC_Elements_Test_emptyElem();
     err += RC_Elements_Test_elem_Set_tile();
+    err += RC_Elements_Test_elem_Set_tiles();
+    err += RC_Elements_Test_elem_Get_tile();
     
     if (err == 0)
     {
         printf("RC_Elements_Test OK !\n");
+    }
+    else
+    {
+        printf("RC_Elements_Test Failed !\n");
     }
 }
