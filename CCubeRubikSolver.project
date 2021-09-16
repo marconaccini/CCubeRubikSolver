@@ -3,6 +3,9 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="RC_Face.c"/>
+    <File Name="RC_Face.h"/>
+    <File Name="RC_Cube.h"/>
     <File Name="RC_Elements.c"/>
     <File Name="RC_Elements.h"/>
     <File Name="RC_Coords.c"/>

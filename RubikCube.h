@@ -12,6 +12,7 @@
 #include "RC_Tiles.h"
 #include "RC_Coords.h"
 #include "RC_Elements.h"
+#include "RC_Cube.h"
 
 #ifndef RubikCube_h
 #define RubikCube_h

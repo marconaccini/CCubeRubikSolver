@@ -101,6 +101,8 @@ int Swap_elem_tiles(Color * x_ptr, Color * y_ptr)
     return 0;
 }
 
+// *** Tests
+
 int RC_Elements_Test_emptyElem(void)
 {
     Elem e;
@@ -161,6 +163,32 @@ int RC_Elements_Test_elem_Get_tile(void)
     return -1;
 }
 
+int RC_Elements_Test_elem_Rotate(void)
+{
+    Elem e;
+    elem_Empty(& e);
+    elem_Set_tiles(& e, (Color [3]) {Ye, Bl, Or});
+    elem_Rotate(& e, sel_y_axis);
+
+    // expecting {Or, Bl, Ye}
+    if ((elem_Get_tile(& e, sel_x_axis) == Or) &
+    (elem_Get_tile(& e, sel_y_axis) == Bl) &
+    (elem_Get_tile(& e, sel_z_axis) == Ye))
+        {
+            elem_Rotate(& e, sel_z_axis);
+
+            // expecting {Bl, Or, Ye}
+            if ((elem_Get_tile(& e, sel_x_axis) == Bl) &
+            (elem_Get_tile(& e, sel_y_axis) == Or) &
+            (elem_Get_tile(& e, sel_z_axis) == Ye))
+                {
+                    printf("RC_Elements_Test_elem_Rotate (2nd) Passed Ok \n");
+                    return 0;
+                }
+        }
+    return -1;
+}
+
 // Test
 void RC_Elements_Test(void)
 {
@@ -169,6 +197,7 @@ void RC_Elements_Test(void)
     err += RC_Elements_Test_elem_Set_tile();
     err += RC_Elements_Test_elem_Set_tiles();
     err += RC_Elements_Test_elem_Get_tile();
+    err += RC_Elements_Test_elem_Rotate();
     
     if (err == 0)
     {
