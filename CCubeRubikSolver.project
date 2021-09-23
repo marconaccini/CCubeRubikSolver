@@ -3,17 +3,19 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="temp.txt"/>
+    <File Name="RC_Element.h"/>
+    <File Name="RC_Element.c"/>
+    <File Name="RC_Tile.h"/>
+    <File Name="RC_Tile.c"/>
+    <File Name="RC_Cube.c"/>
     <File Name="RC_Face.c"/>
     <File Name="RC_Face.h"/>
     <File Name="RC_Cube.h"/>
-    <File Name="RC_Elements.c"/>
-    <File Name="RC_Elements.h"/>
     <File Name="RC_Coords.c"/>
     <File Name="RC_Coords.h"/>
     <File Name="main.c"/>
-    <File Name="RC_Tiles.c"/>
     <File Name="RubikCube.c"/>
-    <File Name="RC_Tiles.h"/>
     <File Name="RubikCube.h"/>
   </VirtualDirectory>
   <Settings Type="Executable">

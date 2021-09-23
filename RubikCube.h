@@ -9,9 +9,9 @@
 *H***********************************************************************/
 
 #include <stdio.h>
-#include "RC_Tiles.h"
+#include "RC_Tile.h"
 #include "RC_Coords.h"
-#include "RC_Elements.h"
+#include "RC_Element.h"
 #include "RC_Cube.h"
 
 #ifndef RubikCube_h

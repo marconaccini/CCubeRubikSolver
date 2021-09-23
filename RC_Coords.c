@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "RC_Tiles.h"
+#include "RC_Tile.h"
 #include "RC_Coords.h"
 
 // Fases disposition
@@ -129,6 +129,21 @@ xy_coords * coords_Get_3D_from_2D
             return xy;
         }
         return 0;
+}
+
+
+xy_coords * coords_90rot(xy_coords * rxy, xy_coords * oxy, dir_selector d)
+{
+    int dir;
+    
+    if (d == sel_Cw_dir) dir = 1;
+    else dir = -1;
+    
+    rxy->x2 = dir * oxy->y2;
+    rxy->y2 = - dir * oxy->x2;
+    
+    return rxy;
+
 }
     
 // Test

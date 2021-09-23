@@ -1,0 +1,22 @@
+
+Tile * Cube_Get_elem_tile( // Gives back the color of the tile of element in (x,y,z)
+    Tile * t,        // destination tile
+    Cube * q,         // the cube
+    xyz_coords xyz, // 3d coordinates of element
+    axis_selector ax// axis to consider
+    )
+    {
+        Elem e;
+        Cube_Get_elem(& e, q, xyz);
+        return elem_Get_tile(& e, ax);
+    }
+    
+Cube * Cube_Set_elem_tile( // Sets the color of the tile of element in (x,y,z)
+    Cube * q,         // destination cube
+    xyz_coords xyz, // 3d coordinates of element
+    axis_selector ax,// axis to consider
+    Tile t           // tile/color
+    )
+    {
+        Elem e;
+    }

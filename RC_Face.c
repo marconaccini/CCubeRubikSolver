@@ -1,7 +1,7 @@
 
-#include "RC_Tiles.h"
+#include "RC_Tile.h"
 #include "RC_Coords.h"
-#include "RC_Elements.h"
+#include "RC_Element.h"
 #include "RC_Face.h"
 
 // *** Functions
@@ -39,3 +39,10 @@ Face * Face_FillColor
                 f->t[x+1][y+1] = c;
         return f;
     }
+    
+
+Face * Face_copy(Face * dest, Face * src)
+{
+    memcpy(dest, src, sizeof(Face));
+    return dest;
+}

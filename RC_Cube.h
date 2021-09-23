@@ -14,12 +14,12 @@
 //* AUTHOR :    Naccini Marco        START DATE :    14/09/21 
 //*H***********************************************************************/
 
-#include "RC_Tiles.h"
+#include "RC_Tile.h"
 #include "RC_Coords.h"
-#include "RC_Elements.h"
+#include "RC_Element.h"
 
-#ifndef RC_Axis_h
-#define RC_Axis_h
+#ifndef RC_Cube_h
+#define RC_Cube_h
 
 typedef struct
 {
@@ -28,7 +28,18 @@ typedef struct
 
 // *** Functions
 
-Cube * Cube_Base(Cube * q);
-Cube * Cube_Rotate(Cube * q, Singmaster s);
+Cube * Cube_Base(   // Fills cube data with a base cube
+    Cube * q        // the cube to create
+    );
+
+Cube * Cube_Copy(   // Fills cube data with a base cube
+    Cube * qd,        // cube destination
+    Cube * qs,        // cube source
+    );
+    
+Cube * Cube_Rotate( // Rotates a cube with a Singmaster notation
+    Cube * q,       // the cube to rotate 
+    Singmaster s    // face and direction
+    );
 
 #endif
