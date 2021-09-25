@@ -7,8 +7,8 @@
 *
 * AUTHOR :    Naccini Marco        START DATE :    14/09/21 
 *H***********************************************************************/
-#include "RC_Tile.h"
-#include "RC_Coords.h"
+//#include "RC_Tile.h"
+//#include "RC_Coords.h"
 
 #ifndef RC_Elements_h
 #define RC_Elements_h

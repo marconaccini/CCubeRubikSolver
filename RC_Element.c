@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "RC_Tile.h"
-#include "RC_Coords.h"
+
 #include "RC_Element.h"
 
 int Swap_elem_tiles(Color * x_ptr, Color * y_ptr);

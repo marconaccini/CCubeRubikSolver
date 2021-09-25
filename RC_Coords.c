@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "RC_Tile.h"
 #include "RC_Coords.h"
 
 // Fases disposition

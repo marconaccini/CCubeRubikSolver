@@ -1,7 +1,3 @@
-
-#include "RC_Tile.h"
-#include "RC_Coords.h"
-#include "RC_Element.h"
 #include "RC_Face.h"
 
 // *** Functions

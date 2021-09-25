@@ -9,10 +9,11 @@
 *H***********************************************************************/
 
 #include <stdio.h>
-#include "RC_Tile.h"
 #include "RC_Coords.h"
-#include "RC_Element.h"
 #include "RC_Cube.h"
+#include "RC_Element.h"
+#include "RC_Face.h"
+#include "RC_Tile.h"
 
 #ifndef RubikCube_h
 #define RubikCube_h

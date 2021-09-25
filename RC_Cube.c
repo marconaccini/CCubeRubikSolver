@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "RC_Tile.h"
-#include "RC_Coords.h"
-#include "RC_Element.h"
+
 #include "RC_Cube.h"
 
 #define X_Fw  1 // Forward  means X = +1
