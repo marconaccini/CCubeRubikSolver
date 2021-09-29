@@ -21,18 +21,18 @@ Elem * Cube_Get_elem(
     xyz_coords xyz // 3d coordinates of element
     )
     {
-        elem_copy(e, q->e[xyz->x3+1][xyz->y3+1][xyz->xz+1]);
+        elem_copy(e, & q->e[xyz.x3+1][xyz.y3+1][xyz.z3+1]);
         return e;
     }
 
-Cube * Cube_Set_elem(
  // Gives back the color of the tile of element in (x,y,z)
+Cube * Cube_Set_elem(
     Cube * q,         // destination cube
-    xyz_coords xyz // 3d coordinates of element
-    Elem * e,        //  coming tile
+    xyz_coords xyz, // 3d coordinates of element
+    Elem * e         //  coming tile
     )
     {
-        elem_copy(q->e[xyz->x3+1][xyz->y3+1][xyz->xz+1], e);
+        elem_copy(& q->e[xyz.x3+1][xyz.y3+1][xyz.z3+1], e);
         return q;
     }
     
