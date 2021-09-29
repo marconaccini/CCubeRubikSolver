@@ -41,35 +41,35 @@ Cube * Cube_Base(   // Fills cube data with a base cube
     )
     {
     // Forward layer
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Md, Z_Up}, (Elem *){Wh, Nc, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Rg, Z_Up}, (Elem *){Wh, Bl, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Rg, Z_Md}, (Elem *){Wh, Bl, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Rg, Z_Dw}, (Elem *){Wh, Bl, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Md, Z_Dw}, (Elem *){Wh, Nc, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Lf, Z_Dw}, (Elem *){Wh, Gr, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Lf, Z_Md}, (Elem *){Wh, Gr, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Lf, Z_Up}, (Elem *){Wh, Gr, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Fw, Y_Md, Z_Md}, (Elem *){Wh, Nc, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Md, Z_Up}, (Elem *){Wh, Nc, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Rg, Z_Up}, (Elem *){Wh, Bl, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Rg, Z_Md}, (Elem *){Wh, Bl, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Rg, Z_Dw}, (Elem *){Wh, Bl, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Md, Z_Dw}, (Elem *){Wh, Nc, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Lf, Z_Dw}, (Elem *){Wh, Gn, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Lf, Z_Md}, (Elem *){Wh, Gn, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Lf, Z_Up}, (Elem *){Wh, Gn, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Fw, Y_Md, Z_Md}, (Elem *){Wh, Nc, Nc});
     
     // Middle layer
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Md, Z_Up}, (Elem *){Nc, Nc, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Rg, Z_Up}, (Elem *){Nc, Bl, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Rg, Z_Md}, (Elem *){Nc, Bl, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Rg, Z_Dw}, (Elem *){Nc, Bl, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Md, Z_Dw}, (Elem *){Nc, Nc, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Lf, Z_Dw}, (Elem *){Nc, Gr, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Lf, Z_Md}, (Elem *){Nc, Gr, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Md, Y_Lf, Z_Up}, (Elem *){Nc, Gr, Or});    
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Md, Z_Up}, (Elem *){Nc, Nc, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Rg, Z_Up}, (Elem *){Nc, Bl, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Rg, Z_Md}, (Elem *){Nc, Bl, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Rg, Z_Dw}, (Elem *){Nc, Bl, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Md, Z_Dw}, (Elem *){Nc, Nc, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Lf, Z_Dw}, (Elem *){Nc, Gn, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Lf, Z_Md}, (Elem *){Nc, Gn, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Md, Y_Lf, Z_Up}, (Elem *){Nc, Gn, Or});    
     
     // Backward layer
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Md, Z_Up}, (Elem *){Ye, Nc, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Rg, Z_Up}, (Elem *){Ye, Bl, Or});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Rg, Z_Md}, (Elem *){Ye, Bl, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Rg, Z_Dw}, (Elem *){Ye, Bl, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Md, Z_Dw}, (Elem *){Ye, Nc, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Lf, Z_Dw}, (Elem *){Ye, Gr, Rd});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Lf, Z_Md}, (Elem *){Ye, Gr, Nc});
-        Cube_Set_elem( & q, (xyz_coords *){X_Bw, Y_Lf, Z_Up}, (Elem *){Ye, Gr, Or});  
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Md, Z_Up}, (Elem *){Ye, Nc, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Rg, Z_Up}, (Elem *){Ye, Bl, Or});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Rg, Z_Md}, (Elem *){Ye, Bl, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Rg, Z_Dw}, (Elem *){Ye, Bl, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Md, Z_Dw}, (Elem *){Ye, Nc, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Lf, Z_Dw}, (Elem *){Ye, Gn, Rd});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Lf, Z_Md}, (Elem *){Ye, Gn, Nc});
+        Cube_Set_elem( & q, (xyz_coords){X_Bw, Y_Lf, Z_Up}, (Elem *){Ye, Gn, Or});  
 
     }
     
@@ -97,7 +97,7 @@ Cube * cube_rotate(
 
             if ((s_xy.x2 != 0) & (s_xy.y2 != 0))
             {
-                coords_90rot(& d_xy, & s_xy);
+                coords_90rot(& d_xy, & s_xy, d);
                 
                 coords_Get_2D_from_3D(& s_xyz, & s_xy, fs);
                 coords_Get_2D_from_3D(& d_xyz, & d_xy, fs);
